@@ -1,0 +1,21 @@
+
+[
+  {
+    "name": "哈佛大学",
+    "undergrad_fee": "$54,000/年",
+    "grad_fee": "$52,000/年",
+    "living_cost": "$20,000/年"
+  },
+  {
+    "name": "斯坦福大学",
+    "undergrad_fee": "$56,000/年",
+    "grad_fee": "$55,000/年",
+    "living_cost": "$21,000/年"
+  },
+  {
+    "name": "麻省理工学院",
+    "undergrad_fee": "$55,510/年",
+    "grad_fee": "$53,790/年",
+    "living_cost": "$19,720/年"
+  }
+]

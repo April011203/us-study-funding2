@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学校资金信息</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+  <header class="bg-blue-600 p-4 text-white text-center">
+    <h1 class="text-2xl font-bold">学校资金信息</h1>
+    <a href="index.html" class="underline">返回首页</a>
+  </header>
+
+  <main class="p-6">
+    <input type="text" id="search" placeholder="搜索学校..." class="border p-2 w-full mb-4 rounded">
+    <div id="schoolList" class="grid gap-6 md:grid-cols-3"></div>
+  </main>
+
+  <script>
+    async function loadSchools() {
+      const res = await fetch('./data/schools.json');
+      const schools = await res.json();
+      const schoolList = document.getElementById('schoolList');
+      const search = document.getElementById('search');
+
+      function render(list) {
+        schoolList.innerHTML = '';
+        list.forEach(school => {
+          const div = document.createElement('div');
+          div.className = 'bg-white p-4 rounded shadow';
+          div.innerHTML = `
+            <h3 class="text-xl font-bold mb-2">${school.name}</h3>
+            <p>本科学费：${school.undergrad_fee}</p>
+            <p>研究生学费：${school.grad_fee}</p>
+            <p>生活费：${school.living_cost}</p>
+          `;
+          schoolList.appendChild(div);
+        });
+      }
+
+      search.addEventListener('input', () => {
+        const keyword = search.value.toLowerCase();
+        const filtered = schools.filter(s => s.name.toLowerCase().includes(keyword));
+        render(filtered);
+      });
+
+      render(schools);
+    }
+
+    loadSchools();
+  </script>
+</body>
+</html>

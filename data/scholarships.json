@@ -1,0 +1,18 @@
+
+[
+  {
+    "name": "Fulbright Scholarship",
+    "amount": "全额学费+生活费",
+    "requirement": "面向全球申请，优秀学术背景"
+  },
+  {
+    "name": "AAUW International Fellowships",
+    "amount": "最高$30,000",
+    "requirement": "仅限女性国际生，研究生及以上"
+  },
+  {
+    "name": "Knight-Hennessy Scholars",
+    "amount": "全额资助+生活津贴",
+    "requirement": "申请斯坦福大学任一研究生项目"
+  }
+]
